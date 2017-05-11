@@ -18,3 +18,5 @@ In the folder "Res_Videos_Bitstream/", you will find the videos that you have en
 For example, do:
 decode_demo_nat('grandma', 0, 0) to have the protected version
 decode_demo_nat('grandma', 1, 123) to reverse the process and almost obtain the original video
+
+The decompressed videos are saved in the folder "Videos_Resultats/".
