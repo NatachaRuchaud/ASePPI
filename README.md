@@ -1,5 +1,5 @@
-# ASePPI
-Adaptive Scrambling enabling Privacy Protection and Intelligibility 
+# ASePPI: Adaptive Scrambling enabling Privacy Protection and Intelligibility 
+Please cite the reference paper:
 
 The code integrates a privacy protection method, ASePPI, into the H.264/AVC codec and runs on Matlab. 
 
