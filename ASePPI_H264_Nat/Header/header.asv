@@ -1,0 +1,4 @@
+[bits] = header(h,w,Quant(q),Frame_start,Frame_end)
+
+bits = '';
+bits = [bits dec]

@@ -1,0 +1,30 @@
+%---------------------------------------------------------
+%% Read AVI file - 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This script/function was first created by 
+% Natacha Ruchaud
+% contact - ruchaud@eurecom.fr
+% website - https://eurecom.fr/~ruchaud
+% The Paper ASePPI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function [mov] = loadFileAvi(fileName)
+addpath('readVideos/');
+movie = mmread(fileName);
+
+f = 1;
+for i =1:movie.nrFramesTotal
+    imgRgb = movie.frames(i).cdata;
+    [h, w, c] = size(imgRgb);
+
+   % If the video needed to flip
+   % imgRgb = flipud(imgRgb);
+    imgRgb = imresize(imgRgb, [round(h/16)*16, round(w/16)*16]);
+    ycbcrmap = rgb2ycbcr(imgRgb);
+    %imgRgb = reshape(convertYuvToRgb(reshape(imgYuv, height * width, 3)), height, width, 3);
+    %imgRgb = ycbcr2rgb(imgYuv);
+    %imwrite(imgRgb,'ActualBackground.bmp','bmp');
+    mov(f) = im2frame(ycbcrmap);
+    f= f+1;
+end
+f
